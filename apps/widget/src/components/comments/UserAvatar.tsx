@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import UserContext from "@/context/UserContext";
+import UserContext from "@repo/widget/src/context/UserContext";
 
 const UserAvatar = () => {
   const { user } = useContext(UserContext);

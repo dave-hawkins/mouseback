@@ -2,7 +2,7 @@ import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import ReactDOM from "react-dom"; // Add this line
 
-import { cn } from "@/utils/utils";
+import { cn } from "@repo/widget/src/utils/utils";
 
 const Dialog = DialogPrimitive.Root;
 
@@ -20,7 +20,7 @@ const CustomPortal: React.FC<CustomPortalProps> = ({ children }) => {
 const DialogPortal = ({
   className,
   ...props
-}: DialogPrimitive.DialogPortalProps & {className?:string}) => (
+}: DialogPrimitive.DialogPortalProps & { className?: string }) => (
   <CustomPortal>
     <div className={cn(className)} {...props} />
   </CustomPortal>

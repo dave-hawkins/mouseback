@@ -1,7 +1,10 @@
 import { InboxIcon } from "lucide-react";
 
-import { MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
-import { Sheet, SheetTrigger } from "@/components/ui/sheet";
+import {
+  MenubarMenu,
+  MenubarTrigger,
+} from "@repo/widget/src/components/ui/menubar";
+import { Sheet, SheetTrigger } from "@repo/widget/src/components/ui/sheet";
 
 const InboxComments = () => {
   return (

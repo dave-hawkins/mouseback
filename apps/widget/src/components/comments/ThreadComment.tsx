@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import { CommentData } from "../CommentMenu";
 import CommentActions, { Action } from "./CommentActions";
-import supabase from "@/lib/supabaseClient";
-import { COMMENTS } from "@/lib/tables";
-import UserContext from "@/context/UserContext";
+import supabase from "@repo/widget/src/lib/supabaseClient";
+import { COMMENTS } from "@repo/widget/src/lib/tables";
+import UserContext from "@repo/widget/src/context/UserContext";
 import { Button } from "../ui/button";
 
 interface ThreadCommentProps {

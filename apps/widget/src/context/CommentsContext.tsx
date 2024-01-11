@@ -1,5 +1,5 @@
-import { CommentData, User } from "@/components/CommentMenu";
-import supabase from "@/lib/supabaseClient";
+import { CommentData, User } from "@repo/widget/src/components/CommentMenu";
+import supabase from "@repo/widget/src/lib/supabaseClient";
 import React, {
   MouseEventHandler,
   PropsWithChildren,
@@ -10,11 +10,11 @@ import React, {
   useState,
 } from "react";
 import UserContext from "./UserContext";
-import { MEMBERS, PROJECT, TEAMS, THREADS } from "@/lib/tables";
+import { MEMBERS, PROJECT, TEAMS, THREADS } from "@repo/widget/src/lib/tables";
 import {
   calculateElementInitialPosition,
   getThreadRelativeCoords,
-} from "@/utils/utils";
+} from "@repo/widget/src/utils/utils";
 
 export interface Thread extends CommentIndicator {
   id: number;
@@ -86,7 +86,7 @@ type Comments = {
   fetchThreads: (projectId: string) => void;
   setTempProjectDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setTempProject: React.Dispatch<React.SetStateAction<ProjectData | null>>;
-  fetchTeams: () => void
+  fetchTeams: () => void;
 };
 
 export const CommentsContext = createContext<Comments>({
@@ -143,10 +143,10 @@ export const CommentsProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [projectDialogOpen, setProjectDialogOpen] = useState<boolean>(false);
   const [createDialogOpen, setCreateDialogOpen] = useState<boolean>(false);
   const [projectName, setProjectName] = useState<string>("");
-  const [isEditor, setIsEditor] = useState<boolean>(false)
+  const [isEditor, setIsEditor] = useState<boolean>(false);
   const [tempProjectDialogOpen, setTempProjectDialogOpen] =
     useState<boolean>(false);
-  const [tempProject, setTempProject] = useState<ProjectData | null>(null)
+  const [tempProject, setTempProject] = useState<ProjectData | null>(null);
 
   // selected comment states
   const [commentMode, setCommentMode] = useState<boolean>(false);
@@ -229,7 +229,7 @@ export const CommentsProvider: React.FC<PropsWithChildren> = ({ children }) => {
     [appConfig]
   ); // add other dependencies if needed
 
-  const createTempProject = async (id:string) => {
+  const createTempProject = async (id: string) => {
     try {
       const { data, error } = await supabase
         .from(PROJECT)
@@ -251,7 +251,6 @@ export const CommentsProvider: React.FC<PropsWithChildren> = ({ children }) => {
       console.error(err);
     }
   };
-
 
   const fetchProjects = async (teams: TeamsData, length: number) => {
     if (!teams) return;
@@ -285,10 +284,10 @@ export const CommentsProvider: React.FC<PropsWithChildren> = ({ children }) => {
       console.error("Error fetching the threds", error);
       return;
     }
-    
+
     setProjects(data);
     if (tempProject?.length) {
-      setTempProject(tempProject[0])
+      setTempProject(tempProject[0]);
       setSelectedProject(tempProject[0]);
       setTempProjectDialogOpen(true);
       await fetchThreads(tempProject[0].id);
@@ -307,13 +306,12 @@ export const CommentsProvider: React.FC<PropsWithChildren> = ({ children }) => {
       console.error("Error fetching the threds", error);
       return;
     }
-    if(data.length>0){
-      setIsEditor(true)
-      
+    if (data.length > 0) {
+      setIsEditor(true);
     }
-    if(teams && data) {
-      await fetchProjects(teams,data.length);
-    } 
+    if (teams && data) {
+      await fetchProjects(teams, data.length);
+    }
   }, [teams]);
 
   const fetchTeams = useCallback(async () => {
@@ -327,8 +325,7 @@ export const CommentsProvider: React.FC<PropsWithChildren> = ({ children }) => {
     }
     const team = data[0];
     setTeams(team);
-   
-  }, [appConfig,isEditor]);
+  }, [appConfig, isEditor]);
 
   /**
    * Method to handle comment click
@@ -414,11 +411,10 @@ export const CommentsProvider: React.FC<PropsWithChildren> = ({ children }) => {
     fetchTeams();
   }, [user, teams]);
 
-
-  useEffect(()=>{
+  useEffect(() => {
     if (!teams) return;
-    fetchMembers()
-  },[teams])
+    fetchMembers();
+  }, [teams]);
 
   /**
    * On window resize update the dots position
@@ -470,7 +466,7 @@ export const CommentsProvider: React.FC<PropsWithChildren> = ({ children }) => {
       fetchThreads,
       setTempProjectDialogOpen,
       setTempProject,
-      fetchTeams
+      fetchTeams,
     }),
     [
       comments,

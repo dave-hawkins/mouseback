@@ -1,4 +1,7 @@
-import { CommentIndicator, Thread } from "@/context/CommentsContext";
+import {
+  CommentIndicator,
+  Thread,
+} from "@repo/widget/src/context/CommentsContext";
 import { ClassValue, clsx } from "clsx";
 import getCssSelector from "css-selector-generator";
 import { twMerge } from "tailwind-merge";

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
 import { SelectTeam } from "./SelectTeam";
-import { CommentsContext } from "@/context/CommentsContext";
+import { CommentsContext } from "@repo/widget/src/context/CommentsContext";
 
 import {
   Dialog,
@@ -12,8 +12,8 @@ import {
   DialogTitle,
 } from "../ui/dialog";
 import { Button } from "../ui/button";
-import { PROJECT, THREADS } from "@/lib/tables";
-import supabase from "@/lib/supabaseClient";
+import { PROJECT, THREADS } from "@repo/widget/src/lib/tables";
+import supabase from "@repo/widget/src/lib/supabaseClient";
 
 function AssignModal() {
   const {
@@ -25,8 +25,7 @@ function AssignModal() {
     setProjects,
     fetchThreads,
   } = useContext(CommentsContext);
-  const isTempProjectSelect =
-    selectedProject && selectedProject.is_temp;
+  const isTempProjectSelect = selectedProject && selectedProject.is_temp;
 
   const deleteTempProject = async () => {
     try {
@@ -34,15 +33,17 @@ function AssignModal() {
         .from(PROJECT)
         .delete()
         .eq("id", tempProject?.id);
-      if (error) return console.error(error)
+      if (error) return console.error(error);
       setTempProjectDialogOpen(false);
       if (selectedProject) {
-        const findTempProject = projects.filter((item)=> item.id !== tempProject?.id)
-        fetchThreads(selectedProject.id)
-        setProjects(findTempProject)
+        const findTempProject = projects.filter(
+          (item) => item.id !== tempProject?.id
+        );
+        fetchThreads(selectedProject.id);
+        setProjects(findTempProject);
       }
     } catch (err) {
-      console.error("Error deleting the temp project",err);
+      console.error("Error deleting the temp project", err);
     }
   };
 

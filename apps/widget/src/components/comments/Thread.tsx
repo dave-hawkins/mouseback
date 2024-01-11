@@ -1,12 +1,15 @@
-import { CommentsContext, Thread } from "@/context/CommentsContext";
-import supabase from "@/lib/supabaseClient";
-import { COMMENTS, THREADS, USERS } from "@/lib/tables";
+import {
+  CommentsContext,
+  Thread,
+} from "@repo/widget/src/context/CommentsContext";
+import supabase from "@repo/widget/src/lib/supabaseClient";
+import { COMMENTS, THREADS, USERS } from "@repo/widget/src/lib/tables";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { CommentData } from "../CommentMenu";
 import ThreadComment from "./ThreadComment";
 import { Button } from "../ui/button";
 import { Send } from "lucide-react";
-import UserContext from "@/context/UserContext";
+import UserContext from "@repo/widget/src/context/UserContext";
 import AddComment from "./AddComment";
 import { Trash } from "lucide-react";
 import CommentSkeleton from "./CommentSkeleton";
@@ -22,7 +25,7 @@ const Thread = () => {
     setDotPositions,
     commentPosition,
     selectedProject,
-    isEditor
+    isEditor,
   } = useContext(CommentsContext);
 
   const [threadComments, setThreadComments] = useState<CommentData[]>([]);

@@ -2,11 +2,11 @@ import {
   CommentsContext,
   CommentIndicator,
   Thread,
-} from "@/context/CommentsContext";
-import UserContext from "@/context/UserContext";
-import supabase from "@/lib/supabaseClient";
-import { THREADS } from "@/lib/tables";
-import { calculateElementInitialPosition } from "@/utils/utils";
+} from "@repo/widget/src/context/CommentsContext";
+import UserContext from "@repo/widget/src/context/UserContext";
+import supabase from "@repo/widget/src/lib/supabaseClient";
+import { THREADS } from "@repo/widget/src/lib/tables";
+import { calculateElementInitialPosition } from "@repo/widget/src/utils/utils";
 import React, { useContext, useRef, useState } from "react";
 import Draggable, { DraggableEventHandler } from "react-draggable";
 
@@ -34,7 +34,7 @@ export const CommentDotIndicator: React.FC<CommentDotIndicatorProps> = ({
     threads,
     setThreads,
     setSelectedThread,
-    isEditor
+    isEditor,
   } = useContext(CommentsContext);
   const { user } = useContext(UserContext);
 

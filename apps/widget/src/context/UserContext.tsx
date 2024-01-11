@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { User } from "@supabase/supabase-js";
-import { Config } from "@/global";
+import { Config } from "@repo/widget/src/global";
 
 type UserContextValue = {
   user: User | null;

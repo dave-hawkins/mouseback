@@ -3,31 +3,31 @@
 import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/widget/src/components/ui/button";
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "@/components/ui/command";
+} from "@repo/widget/src/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { cn } from "@/utils/utils";
-import { CommentsContext } from "@/context/CommentsContext";
+} from "@repo/widget/src/components/ui/popover";
+import { cn } from "@repo/widget/src/utils/utils";
+import { CommentsContext } from "@repo/widget/src/context/CommentsContext";
 import DialogBox from "./DialogBox";
-import clsx from 'clsx'
+import clsx from "clsx";
 
 interface SelectTeamProps {
   fullWidth?: boolean;
 }
 
 export function SelectTeam({ fullWidth }: SelectTeamProps) {
-  const dropdownTrigger = React.useRef<HTMLButtonElement>(null)
-  const dropdownWidth = dropdownTrigger?.current?.clientWidth || 200
+  const dropdownTrigger = React.useRef<HTMLButtonElement>(null);
+  const dropdownWidth = dropdownTrigger?.current?.clientWidth || 200;
   const {
     projects,
     projectDialogOpen,
@@ -35,7 +35,7 @@ export function SelectTeam({ fullWidth }: SelectTeamProps) {
     selectedProject,
     setSelectedProject,
     fetchThreads,
-    isEditor
+    isEditor,
   } = React.useContext(CommentsContext);
 
   return (
@@ -46,19 +46,19 @@ export function SelectTeam({ fullWidth }: SelectTeamProps) {
           variant="outline"
           role="combobox"
           aria-expanded={projectDialogOpen}
-          className={
-            clsx("text-sm font-normal rounded-lg h-8 justify-between border",{
-              'w-full': fullWidth,
-              'w-[150px]': !fullWidth
-            })
-          }
+          className={clsx(
+            "text-sm font-normal rounded-lg h-8 justify-between border",
+            {
+              "w-full": fullWidth,
+              "w-[150px]": !fullWidth,
+            }
+          )}
         >
           <div
-            className={
-              clsx({
-                "w-[90px] overflow-ellipsis overflow-hidden whitespace-nowrap": !fullWidth
-              })
-            }
+            className={clsx({
+              "w-[90px] overflow-ellipsis overflow-hidden whitespace-nowrap":
+                !fullWidth,
+            })}
           >
             {selectedProject
               ? projects.find(
@@ -70,7 +70,10 @@ export function SelectTeam({ fullWidth }: SelectTeamProps) {
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent style={{width: fullWidth ? `${dropdownWidth}px`: '100%'}} className={`msbk- p-0`}>
+      <PopoverContent
+        style={{ width: fullWidth ? `${dropdownWidth}px` : "100%" }}
+        className={`msbk- p-0`}
+      >
         <Command>
           <DialogBox buttonVisible={isEditor} />
           <CommandEmpty>No project name found.</CommandEmpty>

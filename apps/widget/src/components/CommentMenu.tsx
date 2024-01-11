@@ -1,9 +1,9 @@
 import React, { useEffect, useCallback, useRef, useContext } from "react";
 import { User as SUser, UserMetadata } from "@supabase/supabase-js";
 
-import supabase from "@/lib/supabaseClient";
-import UserContext from "@/context/UserContext";
-import { Menubar } from "@/components/ui/menubar";
+import supabase from "@repo/widget/src/lib/supabaseClient";
+import UserContext from "@repo/widget/src/context/UserContext";
+import { Menubar } from "@repo/widget/src/components/ui/menubar";
 import {
   InitialLoggedInScreen,
   UserAvatar,
@@ -11,12 +11,12 @@ import {
   MoreActions,
   Thread,
 } from "./comments";
-import { CommentsContext } from "@/context/CommentsContext";
+import { CommentsContext } from "@repo/widget/src/context/CommentsContext";
 import { CommentDotIndicator } from "./comments/CommentDotIndicator";
 import Cursor from "./Cursor";
 import { SelectTeam } from "./comments/SelectTeam";
 import DialogBox from "./comments/DialogBox";
-import { USERS } from "@/lib/tables";
+import { USERS } from "@repo/widget/src/lib/tables";
 import AssignModal from "./comments/AssignModal";
 
 export type User = {
@@ -51,7 +51,7 @@ const CommentMenu = () => {
     setProjectDialogOpen,
     setProjectName,
     teams,
-    isEditor
+    isEditor,
   } = useContext(CommentsContext);
 
   const toggleCommentMode = useCallback(

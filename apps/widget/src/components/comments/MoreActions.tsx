@@ -1,15 +1,15 @@
 import { MoreHorizontal } from "lucide-react";
 
-import supabase from "@/lib/supabaseClient";
+import supabase from "@repo/widget/src/lib/supabaseClient";
 import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
   MenubarShortcut,
   MenubarTrigger,
-} from "@/components/ui/menubar";
+} from "@repo/widget/src/components/ui/menubar";
 import { useContext } from "react";
-import { CommentsContext } from "@/context/CommentsContext";
+import { CommentsContext } from "@repo/widget/src/context/CommentsContext";
 
 const MoreActions = () => {
   const {

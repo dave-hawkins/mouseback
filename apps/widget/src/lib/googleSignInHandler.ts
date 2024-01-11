@@ -39,7 +39,7 @@ export const googleSignInHandler = async () => {
         return;
       }
 
-      return true;
+      return;
     } catch (err) {
       console.error("Error while adding user to users table:", err);
     }

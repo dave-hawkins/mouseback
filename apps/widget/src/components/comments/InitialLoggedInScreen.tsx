@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { ArrowUpRight, LogInIcon, MoreHorizontal } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@repo/widget/src/components/ui/button";
 import {
   MenubarContent,
   MenubarMenu,
   MenubarTrigger,
-} from "@/components/ui/menubar";
-import githubSignInHandler from "@/lib/githubSignInHandler";
-import googleSignInHandler from "@/lib/googleSignInHandler";
+} from "@repo/widget/src/components/ui/menubar";
+import githubSignInHandler from "@repo/widget/src/lib/githubSignInHandler";
+import googleSignInHandler from "@repo/widget/src/lib/googleSignInHandler";
 
 import {
   Dialog,

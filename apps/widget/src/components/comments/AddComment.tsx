@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Send } from "lucide-react";
-import supabase from "@/lib/supabaseClient";
-import { COMMENTS, USERS } from "@/lib/tables";
-import UserContext from "@/context/UserContext";
+import supabase from "@repo/widget/src/lib/supabaseClient";
+import { COMMENTS, USERS } from "@repo/widget/src/lib/tables";
+import UserContext from "@repo/widget/src/context/UserContext";
 import { CommentData } from "../CommentMenu";
 import { Button } from "../ui/button";
 

@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import * as MenubarPrimitive from "@radix-ui/react-menubar";
 import { Check, ChevronRight, Circle } from "lucide-react";
 
-import { cn } from "@/utils/utils";
+import { cn } from "@repo/widget/src/utils/utils";
 
 const MenubarMenu = MenubarPrimitive.Menu;
 

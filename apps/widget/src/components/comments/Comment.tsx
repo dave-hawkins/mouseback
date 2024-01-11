@@ -3,9 +3,9 @@ import { Send } from "lucide-react";
 
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { CommentsContext } from "@/context/CommentsContext";
-import UserContext from "@/context/UserContext";
-import supabase from "@/lib/supabaseClient";
+import { CommentsContext } from "@repo/widget/src/context/CommentsContext";
+import UserContext from "@repo/widget/src/context/UserContext";
+import supabase from "@repo/widget/src/lib/supabaseClient";
 import { CommentData } from "../CommentMenu";
 
 function Comment() {

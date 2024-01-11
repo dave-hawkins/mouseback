@@ -12,9 +12,9 @@ import {
 } from "../ui/dialog";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import { PROJECT } from "@/lib/tables";
-import supabase from "@/lib/supabaseClient";
-import { CommentsContext } from "@/context/CommentsContext";
+import { PROJECT } from "@repo/widget/src/lib/tables";
+import supabase from "@repo/widget/src/lib/supabaseClient";
+import { CommentsContext } from "@repo/widget/src/context/CommentsContext";
 
 const DialogBox: React.FC<{ buttonVisible: boolean }> = ({ buttonVisible }) => {
   const {
