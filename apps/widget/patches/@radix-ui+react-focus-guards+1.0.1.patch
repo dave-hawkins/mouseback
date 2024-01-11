@@ -1,0 +1,13 @@
+diff --git a/node_modules/@radix-ui/react-focus-guards/dist/index.mjs b/node_modules/@radix-ui/react-focus-guards/dist/index.mjs
+index cb0f892..a3eca94 100644
+--- a/node_modules/@radix-ui/react-focus-guards/dist/index.mjs
++++ b/node_modules/@radix-ui/react-focus-guards/dist/index.mjs
+@@ -13,7 +13,7 @@ function $3db38b7d1fb3fe6a$export$ac5b58043b79449b(props) {
+     $1wErz$useEffect(()=>{
+         var _edgeGuards$, _edgeGuards$2;
+         const edgeGuards = document.querySelectorAll('[data-radix-focus-guard]');
+-        document.body.insertAdjacentElement('afterbegin', (_edgeGuards$ = edgeGuards[0]) !== null && _edgeGuards$ !== void 0 ? _edgeGuards$ : $3db38b7d1fb3fe6a$var$createFocusGuard());
++        document.body.insertAdjacentElement('beforeend', (_edgeGuards$ = edgeGuards[0]) !== null && _edgeGuards$ !== void 0 ? _edgeGuards$ : $3db38b7d1fb3fe6a$var$createFocusGuard());
+         document.body.insertAdjacentElement('beforeend', (_edgeGuards$2 = edgeGuards[1]) !== null && _edgeGuards$2 !== void 0 ? _edgeGuards$2 : $3db38b7d1fb3fe6a$var$createFocusGuard());
+         $3db38b7d1fb3fe6a$var$count++;
+         return ()=>{
