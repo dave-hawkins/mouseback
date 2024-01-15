@@ -9,7 +9,7 @@ export function mouseback() {
 
   const scripts = document.querySelectorAll("script");
   for (const script of scripts) {
-    if (script.src.includes("mouseback") || script.src.includes("main.tsx")) {
+    if (script.src.includes("widget") || script.src.includes("main.tsx")) {
       if (script.src.includes("apiKey")) {
         apiKeyScriptSrc = script.src;
         break;
