@@ -1,6 +1,7 @@
 "use client"
 
 import { useContext } from "react"
+import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import {
   DropdownMenu,
@@ -9,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@repo/dashboard/components/ui/dropdown-menu"
-import { Lightbulb, Link, LogOut, Sailboat } from "lucide-react"
+import { Lightbulb, LogOut, Sailboat } from "lucide-react"
 
 import supabase from "../../lib/supabaseClient"
 import Logo from "../logo"
@@ -102,18 +103,14 @@ export const Navbar = () => {
               <DropdownMenuSeparator />
               <DropdownMenuItem>
                 {" "}
-                <Lightbulb className="mr-2 h-3.5 w-3.5 text-muted-foreground" />
-                Send feedback
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                {" "}
-                <Sailboat className="mr-2 h-3.5 w-3.5 text-muted-foreground" />
-                Changelog
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                {" "}
-                <Link className="mr-2 h-3.5 w-3.5 text-muted-foreground" />
-                Homepage
+                <Link
+                  target="blank"
+                  href={"https://github.com/dave-hawkins/mouseback/issues"}
+                  className="flex items-center"
+                >
+                  <Lightbulb className="break mr-2 h-3.5 w-3.5 truncate text-muted-foreground" />
+                  Feedback
+                </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
