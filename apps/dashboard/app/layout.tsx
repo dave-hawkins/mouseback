@@ -1,6 +1,5 @@
 import "@repo/dashboard/styles/globals.css"
 import { Metadata } from "next"
-import Mouseback from "@repo/dashboard/components/mouseback"
 import { ThemeProvider } from "@repo/dashboard/components/theme-provider"
 import { Toaster } from "@repo/dashboard/components/ui/toaster"
 import { UserProvider } from "@repo/dashboard/components/user-provider"
@@ -42,7 +41,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <Mouseback />
         <body
           className={cn(
             "min-h-screen bg-muted/50 font-sans antialiased dark:bg-background",
