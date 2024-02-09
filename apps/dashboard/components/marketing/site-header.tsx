@@ -67,7 +67,7 @@ export function SiteHeader() {
             <Button
               size={"sm"}
               variant={"ghost"}
-              onClick={handlePrimaryActionClick}
+              onClick={() => router.push("/login")}
             >
               Log in
             </Button>

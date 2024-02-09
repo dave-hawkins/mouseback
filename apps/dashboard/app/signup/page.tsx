@@ -20,7 +20,7 @@ export default function AuthenticationPage() {
             href="/login"
             className={cn(buttonVariants({ variant: "ghost" }), "mt-4")}
           >
-            Login
+            Log in
           </Link>
         </div>
         <div className="absolute bottom-4 right-4">
