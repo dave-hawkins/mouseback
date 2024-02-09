@@ -52,14 +52,6 @@ const OnboardingPage = () => {
                   Ask your devs to copy it into the head of any project and
                   Mouseback should appear.
                 </p>
-                <Link
-                  className="text-center text-sm text-muted-foreground underline underline-offset-4"
-                  href="https://docs.mouseback.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Need help installing? Try our docs
-                </Link>
               </div>
             </div>
           </div>
