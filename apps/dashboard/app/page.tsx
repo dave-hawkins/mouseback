@@ -8,6 +8,8 @@ import { SiteHeader } from "@repo/dashboard/components/marketing/site-header"
 import TryMe from "@repo/dashboard/components/marketing/try-me"
 import { siteConfig } from "@repo/dashboard/config/site"
 
+import Mouseback from "../components/mouseback"
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -38,6 +40,7 @@ export default function IndexPage() {
     <>
       <SiteHeader />
       <TryMe />
+      <Mouseback />
       <section className="container relative grid items-center gap-12 py-20 md:py-44">
         <div aria-hidden="true" className="relative">
           <div className="absolute -z-10 -mt-20 h-[580px] w-full overflow-hidden rounded-t-xl bg-gradient-to-b from-background via-background to-transparent dark:from-foreground/5 dark:via-foreground/5 dark:backdrop-blur-md ">
