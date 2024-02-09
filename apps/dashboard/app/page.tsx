@@ -237,7 +237,7 @@ export default function IndexPage() {
       <section className="container grid items-center gap-12 text-clip py-20 md:pb-44 md:pt-12">
         <div className="flex flex-col  gap-8 md:flex-row md:gap-24">
           <div className="flex flex-col gap-4 md:w-1/3">
-            <h2 className="text-4xl font-semibold"> A better way to build.</h2>
+            <h2 className="text-4xl font-semibold">Why use mouseback?</h2>
             <p className="text-muted-foreground">
               Reasons why we built mouseback.
             </p>
@@ -246,20 +246,21 @@ export default function IndexPage() {
             <div className="flex flex-col gap-8 text-lg">
               <div className="flex flex-col gap-2 ">
                 <div className="font-medium">
-                  Great products aren't built alone
+                  Get design feedback on the real product.
                 </div>
                 <div className="text-base text-muted-foreground">
-                  It takes a village to build great software, Mouseback brings
-                  your team together to iterate on the real product that you're
-                  shipping to users.
+                  Mouseback lets you give feedback and iterate on the actual
+                  code that you're shipping to users, it's like Figma comments
+                  but for the finished product, neat!
                 </div>
               </div>
               <div className="flex flex-col gap-2">
-                <div className="font-medium">Less meetings, more iteration</div>
+                <div className="font-medium">An open source tool</div>
                 <p className="text-base text-muted-foreground">
-                  Mouseback is designed to enable software builders and
-                  stakeholders to quickly iterate on products without the need
-                  for endless meetings or long review cycles.
+                  We're open source and platform agnostic, which means whether
+                  you're building a Laravel, Remix, NextJS or any other app,
+                  mouseback can slot right into your workflow with no platform
+                  lock-in.
                 </p>
               </div>
 
@@ -281,9 +282,9 @@ export default function IndexPage() {
       <section className="container grid items-center gap-12 text-clip py-20 md:pb-44 md:pt-12">
         <div className="flex  gap-24">
           <div className="mx-auto flex  max-w-lg flex-col gap-4 text-center">
-            <h2 className="text-4xl font-semibold">Try the beta today</h2>
+            <h2 className="text-4xl font-semibold">Try the alpha today</h2>
             <p className="text-muted-foreground">
-              We're onboarding teams as of today, get started!
+              Click the sign up button above to get started.
             </p>
             {/* <div className="py-8">
               <SignupForm />

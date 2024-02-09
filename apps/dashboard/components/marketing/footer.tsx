@@ -5,6 +5,9 @@ export default function Footer() {
     <footer className="container ">
       <div className="mx-auto max-w-7xl py-12 md:flex md:items-center md:justify-between ">
         <div className="flex justify-center space-x-6 text-base text-muted-foreground md:order-2">
+          <a href="https://github.com/dave-hawkins/mouseback">
+            <span>GitHub</span>
+          </a>
           <a href="mailto:hi@mouseback.app">
             <span>Contact us</span>
           </a>
