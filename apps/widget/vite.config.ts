@@ -21,6 +21,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: 'dist',
     minify: false,
     lib: {
       entry: path.resolve(__dirname, "./src/main.tsx"),
