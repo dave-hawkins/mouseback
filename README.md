@@ -20,4 +20,4 @@ Other tools used are Supabase for DB, Resend for email sending, Shadcn/UI for co
 
 ## Setup and configuration
 
-I'll work on setting up an installation and configuration guide for this project in due course. If anyone would like to help me figure out how to do this properly, please create an issue or email me on dave@mouseback.app.
+I'll work on setting up an installation and configuration guide for this project in due course. If anyone would like to help me figure out how to do this properly, please create an issue or email me on dave@davehawkins.co.
